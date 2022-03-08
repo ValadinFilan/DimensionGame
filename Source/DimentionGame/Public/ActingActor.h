@@ -9,6 +9,7 @@
 
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FActEvent);
+//DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE(FActEventSignature, AActingActor, OnAct);
 
 UCLASS()
 class DIMENTIONGAME_API AActingActor : public AActor
@@ -16,6 +17,7 @@ class DIMENTIONGAME_API AActingActor : public AActor
 	GENERATED_BODY()
 	
 public:
+
 	// Sets default values for this actor's properties
 	AActingActor();
 
