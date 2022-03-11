@@ -37,6 +37,6 @@ void AInteractingActor::CreateQuestForPlayer(APlayerGameController* PlayerContro
 
 void AInteractingActor::Interact(APlayerGameController* PlayerController)
 {
-
+	OnInteract.Broadcast(PlayerController);
 }
 

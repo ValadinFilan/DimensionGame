@@ -9,7 +9,6 @@
 
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FActEvent);
-//DECLARE_DYNAMIC_MULTICAST_SPARSE_DELEGATE(FActEventSignature, AActingActor, OnAct);
 
 UCLASS()
 class DIMENTIONGAME_API AActingActor : public AActor
@@ -41,6 +40,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	virtual void CreateQuestForPlayer(APlayerGameController* PlayerController);
 
+	//Delagate for blueprint callback programing
 	UPROPERTY(BlueprintAssignable)
 	FActEvent OnAct;
 protected:

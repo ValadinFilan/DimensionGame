@@ -7,6 +7,8 @@
 #include "ActingActor.h"
 #include "InteractingActor.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInteractEvent, APlayerGameController*, PlayerController);
+
 UCLASS()
 class DIMENTIONGAME_API AInteractingActor : public AActingActor
 {
@@ -38,4 +40,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	virtual void Interact(APlayerGameController* PlayerController);
 
+	//Delagate for blueprint callback programing
+	UPROPERTY(BlueprintAssignable)
+	FInteractEvent OnInteract;
 };
