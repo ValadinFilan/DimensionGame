@@ -43,8 +43,9 @@ FItem UInventoryComponent::GetItem(FString Name)
 	{
 		if (Items[i].Name == Name)
 		{
+			FItem Item = Items[i];
 			Items.RemoveAt(i);
-			return Items[i];
+			return Item;
 		}
 	}
 	return FItem();

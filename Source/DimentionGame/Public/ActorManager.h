@@ -28,7 +28,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	//The target object
-	UPROPERTY(EditAnywhere, Category = "Group managing", BlueprintReadWrite)
+	UPROPERTY(EditInstanceOnly, Category = "Group managing", BlueprintReadWrite)
 	TArray<AActingActor*> Targets;
 
 	//The list of connected objects

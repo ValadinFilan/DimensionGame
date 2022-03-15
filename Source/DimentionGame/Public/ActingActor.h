@@ -24,14 +24,6 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Details", BlueprintReadWrite)
 	bool Enabled;
 
-	//Name of the actor
-	UPROPERTY(EditAnywhere, Category = "Quest", BlueprintReadWrite)
-	FName Name;
-
-	//Quest text
-	UPROPERTY(EditAnywhere, Category = "Quest", BlueprintReadWrite)
-	FString QuestText;
-
 	//Calls for acting
 	UFUNCTION(BlueprintCallable)
 	virtual void Act();
