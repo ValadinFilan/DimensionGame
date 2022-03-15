@@ -32,3 +32,38 @@ void UInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	// ...
 }
 
+void UInventoryComponent::AddItem(FItem Item)
+{
+	Items.Add(Item);
+}
+
+FItem UInventoryComponent::GetItem(FString Name)
+{
+	for (int32 i = 0; i < Items.Num(); i++)
+	{
+		if (Items[i].Name == Name)
+		{
+			Items.RemoveAt(i);
+			return Items[i];
+		}
+	}
+	return FItem();
+}
+
+bool UInventoryComponent::IsItemInInventory(FString Name)
+{
+	for(int32 i = 0; i < Items.Num(); i++)
+	{
+		if (Items[i].Name == Name) return true;
+	}
+	return false;
+}
+
+FItem UInventoryComponent::FindItem(FString Name)
+{
+	for (int32 i = 0; i < Items.Num(); i++)
+	{
+		if (Items[i].Name == Name) return Items[i];
+	}
+	return FItem();
+}

@@ -20,6 +20,6 @@ public:
 	APlayerGameController();
 
 	//Inventory component
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UInventoryComponent* Inventory;
 };

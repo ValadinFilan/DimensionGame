@@ -4,9 +4,18 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "Item.h"
 #include "InventoryComponent.generated.h"
 
+USTRUCT(BlueprintType)
+struct FItem {
+	GENERATED_USTRUCT_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString Name = "";
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UTexture2D* Texture;
+};
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class DIMENTIONGAME_API UInventoryComponent : public UActorComponent
@@ -18,17 +27,25 @@ public:
 	UInventoryComponent();
 	
 	//The list of items
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<UItem*> Items;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	TArray<FItem> Items;
 
 	//Add new item to inventory 
-	void Add(UItem* Item);
+	UFUNCTION(BlueprintCallable)
+	void AddItem(FItem Item);
 
 	//Returns the item from inventory and delete it from inventory
-	void Get(FString Name);
+	UFUNCTION(BlueprintCallable)
+	FItem GetItem(FString Name);
+
+	//Item if it is in inventory
+	UFUNCTION(BlueprintCallable)
+	FItem FindItem(FString Name);
 
 	//Returns true if item is in inventory
-	void Find(FString Name);
+	UFUNCTION(BlueprintCallable)
+	bool IsItemInInventory(FString Name);
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
