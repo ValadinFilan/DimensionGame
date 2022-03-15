@@ -18,7 +18,7 @@ class DIMENTIONGAME_API AManagedInteractingActor : public AInteractingActor
 	
 public:
 	//Manager of group
-	UPROPERTY(EditAnywhere, Category = "Group", BlueprintReadWrite)
+	UPROPERTY(EditInstanceOnly, Category = "Group", BlueprintReadWrite)
 	AActorManager* Manager;
 
 	UPROPERTY(EditAnywhere, Category = "Acting", BlueprintReadWrite)

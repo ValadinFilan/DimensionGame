@@ -7,6 +7,17 @@
 #include "InventoryComponent.h"
 #include "PlayerGameController.generated.h"
 
+USTRUCT(BlueprintType)
+struct FQuest {
+	GENERATED_USTRUCT_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString Name = "";
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString Text;
+};
+
 /**
  * 
  */
@@ -20,6 +31,9 @@ public:
 	APlayerGameController();
 
 	//Inventory component
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UInventoryComponent* Inventory;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	TArray<FQuest> Quests;
 };

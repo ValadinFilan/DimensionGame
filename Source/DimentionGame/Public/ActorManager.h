@@ -8,6 +8,8 @@
 #include "ManagedInteractingActor.h"
 #include "ActorManager.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUpdateManagerEvent);
+
 UCLASS()
 class DIMENTIONGAME_API AActorManager : public AActor
 {
@@ -26,11 +28,18 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	//The target object
-	UPROPERTY(EditAnywhere, Category = "Group managing", BlueprintReadWrite)
+	UPROPERTY(EditInstanceOnly, Category = "Group managing", BlueprintReadWrite)
 	TArray<AActingActor*> Targets;
 
 	//The list of connected objects
 	UPROPERTY(EditAnywhere, Category = "Group managing", BlueprintReadWrite)
 	TArray<AManagedInteractingActor*> Actors;
 
+	//Manage objects
+	UFUNCTION(BlueprintCallable)
+	void UpdateManager();
+
+	//Delagate for blueprint callback programing
+	UPROPERTY(BlueprintAssignable)
+	FUpdateManagerEvent OnUpdateManager;
 };

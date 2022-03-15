@@ -15,5 +15,5 @@ void AManagedInteractingActor::CreateQuestForPlayer(APlayerGameController* Playe
 
 void AManagedInteractingActor::Interact(APlayerGameController* PlayerController)
 {
-
+	Super::Interact(PlayerController);
 }
