@@ -5,3 +5,5 @@ Intermediate/
 DerivedDataCache/
 Binaries/
 Script/
+Content/Test/TestScene_BuiltData.uasset
+Content/Test/FirstPersonExampleMap_BuiltData.uasset
