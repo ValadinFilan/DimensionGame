@@ -23,8 +23,8 @@ void AActorManager::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void AActorManager::UpdateManager()
+void AActorManager::UpdateManager(AInteractingActor* Actor)
 {
-	OnUpdateManager.Broadcast();
+	OnUpdateManager.Broadcast(Actor);
 }
 
