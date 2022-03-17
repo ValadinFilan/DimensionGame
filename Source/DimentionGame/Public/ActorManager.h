@@ -6,9 +6,10 @@
 #include "GameFramework/Actor.h"
 #include "ActingActor.h"
 #include "ManagedInteractingActor.h"
+#include "InteractingActor.h"
 #include "ActorManager.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUpdateManagerEvent);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpdateManagerEvent, AInteractingActor*, Actor);
 
 UCLASS()
 class DIMENTIONGAME_API AActorManager : public AActor
@@ -32,12 +33,12 @@ public:
 	TArray<AActingActor*> Targets;
 
 	//The list of connected objects
-	UPROPERTY(EditAnywhere, Category = "Group managing", BlueprintReadWrite)
+	UPROPERTY(EditInstanceOnly, Category = "Group managing", BlueprintReadWrite)
 	TArray<AManagedInteractingActor*> Actors;
 
 	//Manage objects
 	UFUNCTION(BlueprintCallable)
-	void UpdateManager();
+	void UpdateManager(AInteractingActor* Actor);
 
 	//Delagate for blueprint callback programing
 	UPROPERTY(BlueprintAssignable)
