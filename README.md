@@ -41,4 +41,4 @@ visual studio
 
 # Ссылки
 - Билд игры: https://drive.google.com/file/d/1mFOGwf2pqX2KQMHpkFoVgz7wDPnLgXDZ/view?usp=sharing
-- Исходники игры с билженным светом и бинарниками: https://drive.google.com/file/d/1wVrXMQAQBg-3-oW1JVMK5tjpd3yTjHF_/view?usp=sharing
+- Исходники игры с билженным светом и бинарниками: https://drive.google.com/file/d/1Sw8ORL_7G_wupheQuvS32IT-fn1sQUbN/view?usp=sharing
